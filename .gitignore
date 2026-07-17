@@ -1,0 +1,3 @@
+.vscode/*
+!.vscode/settings.sample.json
+!.vscode/extensions.json

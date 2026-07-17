@@ -1,0 +1,23 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[CSS]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "css.styleSheets": ["src/*.css"],
+    "auto-rename-tag.activationOnLanguage": ["html", "javascript", "css"],
+    "auto-close-tag.activationOnLanguage": [
+        "javascript",
+        "html",
+        "css"
+    ],
+    "cssPeek.peekFromLanguages": ["html", "javascript"]
+}

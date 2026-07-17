@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "d3skdev.git-commit-message-helper",
+        "eamodio.gitlens",
+        "ecmel.vscode-html-css",
+        "esbenp.prettier-vscode",
+        "naumovs.color-highlight",
+        "pranaygp.vscode-css-peek",
+        "ritwickdey.liveserver",
+        "usernamehw.errorlens"
+    ]
+}
