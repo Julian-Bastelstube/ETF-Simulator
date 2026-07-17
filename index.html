@@ -1,9 +1,84 @@
-<!DOCTYPE html>
-<html>
-<body>
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ETF Simulator</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <section class="controls-panel">
+        <h1>ETF Simulator</h1>
 
-<h1>Hello World</h1>
-<p>Wonderful</p>
+        <form class="input-list">
+          <label class="input-row">
+            <span>Startkapital</span>
+            <div>
+              <input
+                type="number"
+                min="0"
+                value="10000"
+                title="Das Kapital was sie bereits besitzen und investieren wollen."
+              />
+              <span class="input-suffix">€</span>
+            </div>
 
-</body>
+            <span>Sparperiode</span>
+            <div>
+              <select title="Wählen Sie die Sparperiode aus.">
+                <option value="monat">Monat</option>
+                <option value="quartal">Quartal</option>
+                <option value="jahr">Jahr</option>
+              </select>
+            </div>
+
+            <span>Sparbetrag</span>
+            <div>
+              <input
+                type="number"
+                min="0"
+                value="100"
+                title="Tragen Sie den Betrag ein, den Sie regelmäßig sparen."
+              />
+              <span class="input-suffix">€</span>
+            </div>
+
+            <span>Jahresrendite</span>
+            <div>
+              <input
+                type="number"
+                min="0"
+                max="100"
+                value="7"
+                title="Geben Sie die erwartete jährliche Rendite ein."
+              />
+            </div>
+
+            <span>Zeitraum in Jahren</span>
+            <div>
+              <input
+                type="number"
+                min="1"
+                max="50"
+                value="10"
+                title="Wählen Sie die Laufzeit für die Simulation."
+              />
+            </div>
+          </label>
+        </form>
+      </section>
+
+      <section class="chart-panel" aria-label="Diagramm">
+        <div class="chart-placeholder">
+          <h2>Diagramm</h2>
+          <p>
+            Hier wird später die Entwicklung Ihrer Eingaben live dargestellt.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
 </html>
