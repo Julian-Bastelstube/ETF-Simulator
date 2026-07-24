@@ -1,9 +1,225 @@
-<!DOCTYPE html>
-<html>
-<body>
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ETF Simulator</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="js/chart.umd.js" defer></script>
+    <script src="js/index.js" defer></script>
+  </head>
+  <body>
+    <h1>ETF Simulator</h1>
+    <div id="wrapper">
+      <section id="control-panel">
+        <h2>Parameter</h2>
+        <label>
+          Startdatum <br />
+          <input type="date" id="Startdatum" name="Startdatum" value="2024-01-01" />
+          <!-- TODO: Set to current date with JS-->
+          <br />
+        </label>
 
-<h1>Hello World</h1>
-<p>Wonderful</p>
+        <details>
+          <summary>Sparbetrag</summary>
+          <label>
+            Einzahlperiode <br />
+            <select id="Einzahlperiode" name="Einzahlperiode">
+              <option value="monatlich">Monatlich</option>
+              <option value="vierteljährlich">Vierteljährlich</option>
+              <option value="halbjährlich">Halbjährlich</option>
+              <option value="jährlich">Jährlich</option>
+              <option value="einmalig">Einmalig</option>
+            </select>
+            <br />
+          </label>
+          <label>
+            Sparbetrag Art <br />
+            <select id="Sparbetrag_Art" name="Sparbetrag_Art">
+              <option value="fest">Fest</option>
+              <option value="Wachsender">Wachsender</option>
+              <option value="Gehalt-Kosten">Gehalt-Kosten</option>
+            </select>
+            <br />
+          </label>
+          <label>
+            Ersteinzahlung <br />
+            <input
+              type="number"
+              id="Ersteinzahlung"
+              name="Ersteinzahlung"
+              placeholder="z.B. 10000"
+              min="0"
+            />
+            <span>€</span>
+            <br />
+          </label>
+          <label>
+            Regelmäßige Einzahlung <br />
+            <input
+              type="number"
+              id="Regelmäßige_Einzahlung"
+              name="Regelmäßige_Einzahlung"
+              placeholder="z.B. 500"
+              min="0"
+            />
+            <span>€</span>
+            <br />
+          </label>
+          <label>
+            Jährliche Kosten <br />
+            <input
+              type="number"
+              id="Jährlichen_Kosten"
+              name="Jährlichen_Kosten"
+              placeholder="z.B. 1000"
+              min="0"
+            />
+            <span>€</span>
+            <br />
+          </label>
+          <label>
+            Jährliches Nettoeinkommen <br />
+            <input
+              type="number"
+              id="Jährliches_Nettoeinkommen"
+              name="Jährliches_Nettoeinkommen"
+              placeholder="z.B. 50000"
+              min="0"
+            />
+            <span>€</span>
+            <br />
+          </label>
+          <label>
+            Einzahlstopp <br />
+            <input type="date" id="Einzahlstopp" name="Einzahlstopp" />
+          </label>
+        </details>
 
-</body>
+        <details>
+          <summary>Schätzwerte</summary>
+          <label>
+            Inflation <br />
+            <input type="number" id="Inflation" name="Inflation" placeholder="z.B. 2" min="0" />
+            <span>%</span>
+            <br />
+          </label>
+          <label>
+            Gehaltszuwachs <br />
+            <input
+              type="number"
+              id="Gehaltszuwachs"
+              name="Gehaltszuwachs"
+              placeholder="z.B. 3"
+              min="0"
+            />
+            <span>%</span>
+            <br />
+          </label>
+          <label>
+            ETF Wachstum <br />
+            <input
+              type="number"
+              id="ETF_Wachstum"
+              name="ETF_Wachstum"
+              placeholder="z.B. 7"
+              min="0"
+            />
+            <span>%</span>
+            <br />
+          </label>
+          <label>
+            Basiszins <br />
+            <input type="number" id="Basiszins" name="Basiszins" placeholder="z.B. 2" />
+            <span>%</span>
+            <br />
+          </label>
+        </details>
+
+        <details>
+          <summary>Gesetzliche Vorgaben</summary>
+          <!--TODO: Warnung hinzufügen bei Abweichungen-->
+          <label>
+            ETF Teilfreistellung <br />
+            <input
+              type="number"
+              id="ETF_Teilfreistellung"
+              name="ETF_Teilfreistellung"
+              value="30"
+              min="0"
+              max="100"
+            />
+            <span>%</span>
+            <br />
+          </label>
+          <label>
+            ETF Steuerfreibetrag <br />
+            <input
+              type="number"
+              id="ETF_Steuerfreibetrag"
+              name="ETF_Steuerfreibetrag"
+              value="1000"
+              min="0"
+              max="2000"
+            />
+            <span>€</span>
+            <br />
+          </label>
+
+          <label>
+            ETF Steuer <br />
+            <input
+              type="number"
+              id="ETF_Steuer"
+              name="ETF_Steuer"
+              value="26,375"
+              min="0"
+              max="100"
+            />
+            <span>%</span>
+            <br />
+          </label>
+
+          <label>
+            Faktor Vorabpauschale <br />
+            <input
+              type="number"
+              id="Faktor_Vorabpauschale"
+              name="Faktor_Vorabpauschale"
+              placeholder="70% ist die gesetzliche Vorgabe"
+              value="70"
+              min="0"
+              max="100"
+            />
+            <span>%</span>
+            <br />
+          </label>
+        </details>
+
+        <details>
+          <summary>Weitere Einstellungen</summary>
+          <label class="checkbox-label">
+            <input
+              type="checkbox"
+              id="Steuerfreibetrag_aufbrauchen"
+              name="Steuerfreibetrag_aufbrauchen"
+            />
+            <span>Steuerfreibetrag für Steueroptimierung aufbrauchen</span>
+          </label>
+          <label class="checkbox-label">
+            <input
+              type="checkbox"
+              id="Vorabpauschale_aufbrauchen"
+              name="Vorabpauschale_aufbrauchen"
+            />
+            <span>Vorabpauschale für Steueroptimierung aufbrauchen</span>
+          </label>
+        </details>
+      </section>
+
+      <section id="chart-panel">
+        <h2>Diagramm</h2>
+      </section>
+    </div>
+  </body>
 </html>

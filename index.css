@@ -1,0 +1,44 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="number"] {
+  width: 20ch;
+}
+
+#wrapper {
+  display: flex;
+}
+
+#control-panel {
+  width: 30ch;
+  flex: 0 0 auto;
+}
+
+#control-panel label {
+  display: block;
+  margin-bottom: 0.75ch;
+}
+
+#control-panel details {
+  margin-bottom: 0.75ch;
+}
+
+#chart-panel {
+  flex: 1;
+}
+
+#control-panel label.checkbox-label {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5ch;
+}

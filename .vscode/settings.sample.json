@@ -14,10 +14,8 @@
     },
     "css.styleSheets": ["src/*.css"],
     "auto-rename-tag.activationOnLanguage": ["html", "javascript", "css"],
-    "auto-close-tag.activationOnLanguage": [
-        "javascript",
-        "html",
-        "css"
-    ],
-    "cssPeek.peekFromLanguages": ["html", "javascript"]
+    "auto-close-tag.activationOnLanguage": ["javascript", "html", "css"],
+    "cssPeek.peekFromLanguages": ["html", "javascript"],
+    "prettier.tabWidth": 4,
+    "editor.formatOnSave": true
 }
