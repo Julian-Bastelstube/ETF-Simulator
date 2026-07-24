@@ -1,0 +1,36 @@
+Beschreibung: Ein Programm was den Wachstum von ETFs simuliert und darstellt
+
+Umsetzung:
+    Statische Webseite
+    
+    Variablen Festlegen -> Simulierung -> Grafik
+    
+    Variablen Festlegen:
+        Datum
+
+        Sparbetrag:
+            regelmäßig:
+                - Monat/Quartal/Jahr
+                - fester/wachsender/Gehalt-Kosten
+                - Endzeitpunkt (Datum, für z.B. Ruhestand)
+            einmalig:
+                - fest
+                - nur einmal am Anfang
+        Geschätzter Wachstum:
+            Inflation, ETF Wachstum, Gehaltsanstieg
+            Vorbefüllen mit Info warum diese Werte
+        Gesetzliche Vorgaben:
+            Vorbefüllen mit Warnung das diese nicht geändert werden sollten
+    
+    Simulation:
+        Anfang des Jahres:
+            Vorabpauschale Vorjahr
+        Pro Zeiteinheit:
+            ETF Wachstum berechnen
+        Ende des Jahres:
+            Freibetrag durch ETF-Umwelzung Aufbrauchen
+            Vorabpauschale durch ETF-Umwelzung Aufbrauchen
+        In Tabelle(n) speichern
+    
+    Grafik:
+        Aus Tabelle(n) generieren
